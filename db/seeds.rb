@@ -8,7 +8,7 @@
 
 require 'csv'
 
-CSV.foreach("db/books", headers: true) do |row|
+CSV.foreach("db/books.csv", headers: true) do |row|
 	title = row[0]
 	author = row[1]
 	year = row[2]
