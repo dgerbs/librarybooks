@@ -7,6 +7,7 @@ class AddFavoriteFieldToBooks < ActiveRecord::Migration
   	add_column :books, :favorite, :boolean
   end
 
-  def
+  def down
   	remove_column :books, :favorite, :boolean
+  end
 end
