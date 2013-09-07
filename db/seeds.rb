@@ -11,12 +11,7 @@ require 'csv'
 CSV.foreach("db/books", headers: true) do |row|
 	title = row[0]
 	author = row[1]
-	genre = row[2]
-	year = row[3]
-	book.title = title
-	book.author = author
-	book.genre = genre
-	book.year = year
+	year = row[2]
 end
 
 
