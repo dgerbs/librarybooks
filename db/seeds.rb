@@ -12,7 +12,7 @@ CSV.foreach("/Users/douggerber/Dropbox/work/library/db/books.csv", headers: true
 	book = {
 		title: row[0],
 		author: row[1],
-		year: row[2]
+		book_id: row[2]
 	}
 
 	if Checkout.where(book).empty?
@@ -21,9 +21,13 @@ CSV.foreach("/Users/douggerber/Dropbox/work/library/db/books.csv", headers: true
 end
 
 
+CSV.foreach("/Users/douggerber/Dropbox/work/library/db/categories.csv", headers: true) do |row|
+	cat = {
+		name: row[0],
+		category_id: row[1]
+	}
 
-# title,author,genre,year
-# apple,washington,mystery,1801
-# orange,clementine,drama,1923
-# cherry,lambert,scifi,2002
-# grape,concord,fiction,1957
+	if Category.where(cat).empty?
+		Category.create(cat)
+	end
+end

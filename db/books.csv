@@ -1,5 +1,7 @@
-title,author,year
-apple,washington,1801
-orange,clementine,1923
-cherry,lambert,2002
-grape,concord,1957
+title,author,book_id
+apple,washington,1
+orange,clementine,2
+cherry,lambert,3
+grape,concord,4
+strawberry,red,5
+blueberry,california,6
