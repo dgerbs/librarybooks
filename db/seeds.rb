@@ -8,11 +8,18 @@
 
 require 'csv'
 
-CSV.foreach("db/books.csv", headers: true) do |row|
-	title = row[0]
-	author = row[1]
-	year = row[2]
+CSV.foreach("/Users/douggerber/Dropbox/work/library/db/books.csv", headers: true) do |row|
+	book = {
+		title: row[0],
+		author: row[1],
+		year: row[2]
+	}
+
+	if Checkout.where(book).empty?
+		Checkout.create(book)
+	end
 end
+
 
 
 # title,author,genre,year
